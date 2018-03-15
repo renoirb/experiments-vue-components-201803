@@ -20,7 +20,10 @@
     "@vue/test-utils": "^1.0.0-beta.10",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^22.0.4",
-    "vue-template-compiler": "^2.5.13"
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.5.13",
+    "vuetify": "^1.0.8"
   },
   "babel": {
     "presets": [
