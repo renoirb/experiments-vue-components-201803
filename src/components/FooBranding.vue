@@ -19,7 +19,7 @@
 </template>
 
 <script>
-const classNames = ['grey', 'lighten-4', 'elevation-4'];
+const classNames = ['hotpink--text', 'text-xs-center', 'pa-2'];
 
 // @vue/component
 export default {

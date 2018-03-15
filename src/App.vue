@@ -1,14 +1,25 @@
 <template>
   <div id="app">
-    <v-btn
-      icon
-    >
-      <v-icon>menu</v-icon>
-    </v-btn>
-    <foo-branding />
+    <v-app>
+      <v-content>
+        <v-container>
+          <v-btn
+            icon
+          >
+            <v-icon>menu</v-icon>
+          </v-btn>
+          <foo-branding />
+        </v-container>
+      </v-content>
+    </v-app>
+
   </div>
 </template>
-<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons');
+</style>
+
 <script>
 import {
   FooBranding
