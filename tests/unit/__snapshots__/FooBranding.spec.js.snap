@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooBranding.vue Should have the following default markup 1`] = `
+<div
+  class="grey lighten-4 elevation-4"
+>
+  <a
+    href="http://www.catfacts.co/"
+  >
+    
+    SomethingElse
+  
+  </a>
+  
+   
+  ©
+   
+  1998-2018
+   
+  
+  <a
+    href="http://www.piedpiper.com/"
+  >
+    
+    PiedPiper
+  
+  </a>
+</div>
+`;
+
+exports[`FooBranding.vue renders props.productName when passed 1`] = `
+<div
+  class="grey lighten-4 elevation-4"
+>
+  <a
+    href="http://www.catfacts.co/"
+  >
+    
+    sg59PgYRUqI79HW
+  
+  </a>
+  
+   
+  ©
+   
+  1998-2018
+   
+  
+  <a
+    href="http://www.piedpiper.com/"
+  >
+    
+    PiedPiper
+  
+  </a>
+</div>
+`;
