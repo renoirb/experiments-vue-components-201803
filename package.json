@@ -1,10 +1,12 @@
 {
-  "name": "datatable-component",
+  "name": "@renoirb/experiments-vue-components-201803",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --dest lib --target lib src/main.js",
+    "test": "vue-cli-service test",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -13,7 +15,11 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
+    "@vue/cli-plugin-unit-jest": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
+    "@vue/test-utils": "^1.0.0-beta.10",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^22.0.4",
     "vue-template-compiler": "^2.5.13"
   },
   "babel": {
