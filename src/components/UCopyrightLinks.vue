@@ -19,10 +19,11 @@
 </template>
 
 <script>
-const classNames = ['hotpink--text', 'text-xs-center', 'pa-2'];
+const classNames = ['hotpink--text', 'text-xs-center', 'pa-1'];
 
 // @vue/component
 export default {
+  name: 'UCopyrightLinks',
   props: {
     productName: {
       type: String,

@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build",
+    "dev": "vue-cli-service serve --open --hot",
     "lib": "vue-cli-service build --dest lib --target lib src/main.js",
     "test": "vue-cli-service test",
+    "test:watch": "vue-cli-service test --config jest.config.js -i --watch",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

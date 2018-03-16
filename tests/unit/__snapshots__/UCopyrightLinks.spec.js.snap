@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FooBranding.vue Should have the following default markup 1`] = `
+exports[`UCopyrightLinks.vue Should have the following default markup 1`] = `
 <div
-  class="grey lighten-4 elevation-4"
+  class="hotpink--text text-xs-center pa-1"
 >
   <a
     href="http://www.catfacts.co/"
@@ -28,9 +28,9 @@ exports[`FooBranding.vue Should have the following default markup 1`] = `
 </div>
 `;
 
-exports[`FooBranding.vue renders props.productName when passed 1`] = `
+exports[`UCopyrightLinks.vue renders props.productName when passed 1`] = `
 <div
-  class="grey lighten-4 elevation-4"
+  class="hotpink--text text-xs-center pa-1"
 >
   <a
     href="http://www.catfacts.co/"

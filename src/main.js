@@ -1,5 +1,3 @@
-require('../node_modules/vuetify/src/stylus/app.styl')
-
 import Vue from 'vue'
 import App from './App'
 
@@ -16,10 +14,12 @@ import {
   VFooter,
   VList,
   VBtn,
+  VCard,
   VIcon,
   VGrid,
   VToolbar,
-  FooBranding
+  UToolbarCard,
+  UCopyrightLinks
 } from './components'
 
 Vue.use(Vuetify, {
@@ -29,10 +29,12 @@ Vue.use(Vuetify, {
     VFooter,
     VList,
     VBtn,
+    VCard,
     VIcon,
     VGrid,
     VToolbar,
-    FooBranding
+    UToolbarCard,
+    UCopyrightLinks
   },
   theme: {
     primary: '#2C3E50',
@@ -45,6 +47,8 @@ Vue.use(Vuetify, {
     hotpink: '#ff69b4'
   }
 })
+
+require('../node_modules/vuetify/src/stylus/app.styl')
 
 Vue.config.productionTip = false
 
