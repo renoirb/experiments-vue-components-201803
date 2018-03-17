@@ -12,10 +12,13 @@ module.exports = {
   ],
   transform: {
     '^.+\\.vue$': 'vue-jest',
-    '^.+\\.jsx?$': 'babel-jest'
-    //'\\.(styl)$': 'jest-css-modules'
+    // '^.+\\.vue$': 'jest-vue-preprocessor',
+    '^.+\\.jsx?$': 'babel-jest',
+    '\\.(styl)$': 'jest-css-modules'
   },
   moduleNameMapper: {
+    '^@/tests$': '<rootDir>/tests/index.js',
+    '^@/tests/(.*)$': '<rootDir>/tests/$1',
     '^@/(.*)$': '<rootDir>/src/$1'
   },
   snapshotSerializers: [

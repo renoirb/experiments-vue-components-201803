@@ -4,10 +4,10 @@
       <v-content>
         <v-container>
           <u-toolbar-card
-            title="Developing Vue.js components"
+            title="UneLibrarie Demo"
           >
 
-            <h3>Card contents</h3>
+            <h3>Ceci est une VCard</h3>
             <img src="https://lorempixel.com/420/320/abstract" />
 
             <u-expansion-panel-list
@@ -18,7 +18,7 @@
             <div slot="actions">
               <v-btn>
                 <v-icon>assignment_turned_in</v-icon>
-                Submit
+                Soumettre
               </v-btn>
             </div>
           </u-toolbar-card>

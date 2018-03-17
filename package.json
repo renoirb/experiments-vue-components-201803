@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve --open --hot",
-    "lib": "vue-cli-service build --dest lib --target lib src/main.js",
+    "lib": "vue-cli-service build --dest lib --target lib --name UneLibrairie src/lib.js",
     "test": "vue-cli-service test",
     "test:watch": "vue-cli-service test --config jest.config.js -i --watch",
     "lint": "vue-cli-service lint"
@@ -20,9 +20,13 @@
     "@vue/test-utils": "^1.0.0-beta.10",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^22.0.4",
+    "css-loader": "^0.28.11",
+    "jest-css-modules": "^1.1.0",
+    "jest-vue-preprocessor": "^1.4.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "vue-template-compiler": "^2.5.13",
+    "vue-style-loader": "^4.0.2",
+    "vue-template-compiler": "^2.5.16",
     "vuetify": "^1.0.8"
   },
   "babel": {
