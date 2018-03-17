@@ -1,0 +1,13 @@
+{
+  "name": "experiments-nuxt-201803",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt"
+  },
+  "dependencies": {
+    "nuxt": "^1.4.0",
+    "@renoirb/experiments-vue-components-201803": "https://github.com/renoirb/experiments-vue-components-201803.git#master"
+  }
+}
