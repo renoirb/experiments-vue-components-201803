@@ -3,7 +3,7 @@
     class="u-toolbar-card--component"
   >
     <v-toolbar
-      color="light-blue darken-4"
+      color="primary"
     >
       <v-toolbar-title
         class="white--text"

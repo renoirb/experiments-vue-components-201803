@@ -1,7 +1,7 @@
 {
   "name": "@renoirb/experiments-vue-components-201803",
   "version": "0.1.0",
-  "private": true,
+  "main": "lib/UneLibrairie.umd.min.js",
   "scripts": {
     "dev": "vue-cli-service serve --open --hot",
     "lib": "vue-cli-service build --dest lib --target lib --name UneLibrairie src/lib.js",

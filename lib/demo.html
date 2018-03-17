@@ -1,0 +1,13 @@
+<title>UneLibrairie demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./UneLibrairie.umd.js"></script>
+<link rel="stylesheet" href="./UneLibrairie.css">
+
+<div id="app"></div>
+
+<script>
+Vue.use(UneLibrairie)
+new Vue({
+  template: '<u-app></u-app>'
+}).$mount('#app')
+</script>

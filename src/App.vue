@@ -43,7 +43,6 @@ import {
   UExpansionPanelList
 } from './components'
 
-
 const data = {
   panels: [
     {
@@ -60,7 +59,7 @@ const data = {
 }
 
 export default {
-  name: 'app',
+  name: 'u-app',
   data: () => ({
     ...data,
   }),
