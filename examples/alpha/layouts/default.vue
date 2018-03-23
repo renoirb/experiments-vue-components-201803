@@ -32,18 +32,6 @@
       >
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
       </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
@@ -73,18 +61,20 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-footer 
-      :fixed="fixed"
+    <v-footer
       height="auto"
       app
     >
       <v-layout row wrap justify-center>
-        <ucopyright-links
+        <u-copyright-links
           :first-year="2003"
           publisher-name="Renoir Boulanger"
           publisher-url="http://renoirb.com"
           product-name="Renoir’s Components"
           product-url="https://github.com/renoirb/experiments-vue-components-201803/"
+        />
+        <u-navigation-footer
+          :items="footer"
         />
       </v-layout>
     </v-footer>
@@ -99,12 +89,27 @@
         drawer: true,
         fixed: false,
         items: [
-          { icon: 'home', title: 'Home', to: '/' },
+          {
+            icon: 'home',
+            title: 'Home',
+            to: '/'
+          },
+          {
+            icon: 'toys',
+            title: 'Experiments',
+            to: '/experiments'
+          },
         ],
         miniVariant: true,
         right: true,
         rightDrawer: false,
-        title: 'Hello!'
+        title: 'Hello!',
+        footer: [
+          {
+            label: 'Fork-me on GitHub',
+            href: 'https://github.com/renoirb/experiments-vue-components-201803'
+          }
+        ],
       }
     }
   }

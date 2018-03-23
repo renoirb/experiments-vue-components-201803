@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "nuxt"
   },
   "dependencies": {
-    "nuxt": "^1.4.0",
-    "@renoirb/experiments-vue-components-201803": "https://github.com/renoirb/experiments-vue-components-201803.git#master"
+    "@renoirb/experiments-vue-components-201803": "https://github.com/renoirb/experiments-vue-components-201803.git#master",
+    "nuxt": "^1.4.0"
   }
 }

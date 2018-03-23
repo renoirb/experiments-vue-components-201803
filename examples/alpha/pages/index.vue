@@ -1,6 +1,6 @@
 <template>
   <div>
-    <uexpansion-panel-list
+    <u-expansion-panel-list
       class="mb-3"
       :panels="panels"
     />

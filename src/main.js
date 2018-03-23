@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VuePlugin from './lib'
+import Demo from './Demo.vue'
 
 /**
  * That should be used for the demo.
