@@ -1,6 +1,6 @@
 <template>
   <div
-    class="u-toolbar-card--component"
+    :class="[classNames]"
   >
     <v-toolbar
       color="primary"
@@ -33,9 +33,13 @@
 import VToolbar from 'vuetify/es5/components/VToolbar'
 import VCard from 'vuetify/es5/components/VCard'
 
+const classNames = [
+  'u-toolbar-card--component'
+]
+
 // @vue/component
 export default {
-  name: 'UToolbarCard',
+  name: 'u-toolbar-card',
   props: {
     icon: {
       type: String,
@@ -46,6 +50,9 @@ export default {
       default: 'Card Title'
     }
   },
+  data: () => ({
+    classNames,
+  }),
   components: {
     VToolbar,
     VCard,

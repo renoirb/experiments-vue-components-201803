@@ -25,6 +25,7 @@
     "jest-vue-preprocessor": "^1.4.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-markdown": "^2.2.4",
     "vue-style-loader": "^4.0.2",
     "vue-template-compiler": "^2.5.16",
     "vuetify": "^1.0.8"

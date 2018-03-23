@@ -1,12 +1,12 @@
 <template>
   <v-expansion-panel
-    class="u-expansion-panel-list--component"
-    v-model="opened"
+    :class="[classNames]"
+    v-model="openedIndex"
   >
     <v-expansion-panel-content
       v-for="(item, i) in panels"
       :key="i"
-      :value="i==opened"
+      :value="i==openedIndex"
     >
       <h2
         slot="header"
@@ -30,11 +30,15 @@ import {
   VExpansionPanelContent
 } from 'vuetify/es5/components/VExpansionPanel/index.js'
 
+const classNames = [
+  'u-expansion-panel-list--component',
+]
+
 // @vue/component
 export default {
-  name: 'UExpansionPanelList',
+  name: 'u-expansion-panel-list',
   props: {
-    opened: {
+    openedIndex: {
       type: Number,
       default: 0
     },
@@ -42,13 +46,16 @@ export default {
       type: Array,
       default: () => ([
         {
-          label: 'Hello',
-          key: 'hello',
+          label: 'Expansion Panel',
+          key: 'expansion-panel',
           contents: '...'
         }
       ])
     }
   },
+  data: () => ({
+    classNames,
+  }),
   components: {
     VExpansionPanel,
     VExpansionPanelContent

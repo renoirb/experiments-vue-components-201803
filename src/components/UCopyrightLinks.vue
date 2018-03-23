@@ -1,5 +1,7 @@
 <template>
-  <div :class="[classNames]">
+  <div
+    :class="[classNames]"
+  >
     <a
       :href="productUrl"
     >
@@ -19,11 +21,16 @@
 </template>
 
 <script>
-const classNames = ['hotpink--text', 'text-xs-center', 'pa-1'];
+const classNames = [
+  'u-copyright-links--component',
+  'hotpink--text',
+  'text-xs-center',
+  'pa-1'
+];
 
 // @vue/component
 export default {
-  name: 'UCopyrightLinks',
+  name: 'u-copyright-links',
   props: {
     productName: {
       type: String,

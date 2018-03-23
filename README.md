@@ -27,3 +27,4 @@ index 67efe44..097c3f1 100644
 +    "lib": "vue-cli-service build --dest lib --target lib src/main.js",
 +    "test": "vue-cli-service test",
 ```
+

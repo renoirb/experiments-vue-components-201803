@@ -7,12 +7,14 @@
     <v-card
       class="mt-3"
     >
-      <v-card-media src="https://lorempixel.com/420/320/abstract" height="200px">
-      </v-card-media>
+      <v-card-media
+        src="https://lorempixel.com/420/320/abstract"
+        height="200px"
+      />
       <v-card-title primary-title>
         <div>
-          <h3 class="headline mb-0">Some Abstract Image</h3>
-          <div>Lorem ipsum dolor sit amet, cum ad expetendis incorrupte, cu option singulis vix, pro summo omnium constituto ea.</div>
+          <h3 class="headline mb-0">Lorem</h3>
+          <div v-html="panels[0].contents"></div>
         </div>
       </v-card-title>
       <v-card-actions>

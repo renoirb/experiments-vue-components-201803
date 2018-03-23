@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App'
+import Demo from './Demo'
 import VuePlugin from './lib'
 
 Vue.config.productionTip = false
@@ -8,7 +8,7 @@ Vue.use(VuePlugin)
 
 new Vue({
   components: {
-    App
+    Demo
   },
-  render: h => h(App)
+  render: h => h(Demo)
 }).$mount('#app')
