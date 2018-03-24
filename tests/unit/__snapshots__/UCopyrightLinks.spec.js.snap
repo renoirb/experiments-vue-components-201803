@@ -2,7 +2,7 @@
 
 exports[`UCopyrightLinks.vue Should have the following default markup 1`] = `
 <div
-  class="hotpink--text text-xs-center pa-1"
+  class="u-copyright-links--component text-xs-center pa-1 accent--text"
 >
   <a
     href="http://www.catfacts.co/"
@@ -30,7 +30,7 @@ exports[`UCopyrightLinks.vue Should have the following default markup 1`] = `
 
 exports[`UCopyrightLinks.vue renders props.productName when passed 1`] = `
 <div
-  class="hotpink--text text-xs-center pa-1"
+  class="u-copyright-links--component text-xs-center pa-1 accent--text"
 >
   <a
     href="http://www.catfacts.co/"

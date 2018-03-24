@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="[classNames]"
+    :class="[classes]"
   >
     <a
       :href="productUrl"
@@ -21,16 +21,16 @@
 </template>
 
 <script>
-const classNames = [
-  'u-copyright-links--component',
-  'hotpink--text',
-  'text-xs-center',
-  'pa-1'
-];
+import Themeable from 'vuetify/es5/mixins/themeable'
+import Colorable from 'vuetify/es5/mixins/colorable'
 
 // @vue/component
 export default {
   name: 'u-copyright-links',
+  mixins: [
+    Colorable,
+    Themeable,
+  ],
   props: {
     productName: {
       type: String,
@@ -53,11 +53,32 @@ export default {
       default: 1998,
     },
   },
-  data: () => ({
-    classNames,
-  }),
   computed: {
-    year: () => new Date().getFullYear(),
+    year () {
+      return new Date().getFullYear()
+    },
+    classes () {
+      /**
+       * Here, we're using Vuetify's mixins.
+       * So we can see how to leverage them
+       * in our own components.
+       */
+      const classes = Object.assign(
+        {
+          'u-copyright-links--component': true,
+          'text-xs-center': true,
+          'pa-1': true,
+          'accent--text': true,
+          'theme--dark': this.dark,
+          'theme--light': this.light,
+        },
+        this.color
+          ? Colorable.methods.addTextColorClassChecks.call(this, {}, this.color)
+          : {}
+      )
+
+      return classes
+    },
   },
-};
+}
 </script>

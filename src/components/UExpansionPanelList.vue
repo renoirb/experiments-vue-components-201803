@@ -24,15 +24,12 @@
 </template>
 
 <script>
-
 import {
   VExpansionPanel,
-  VExpansionPanelContent
+  VExpansionPanelContent,
 } from 'vuetify/es5/components/VExpansionPanel/index.js'
 
-const classNames = [
-  'u-expansion-panel-list--component',
-]
+const classNames = ['u-expansion-panel-list--component']
 
 // @vue/component
 export default {
@@ -40,25 +37,25 @@ export default {
   props: {
     openedIndex: {
       type: Number,
-      default: 0
+      default: 0,
     },
     panels: {
       type: Array,
-      default: () => ([
+      default: () => [
         {
           label: 'Expansion Panel',
           key: 'expansion-panel',
-          contents: '...'
-        }
-      ])
-    }
+          contents: '...',
+        },
+      ],
+    },
   },
   data: () => ({
     classNames,
   }),
   components: {
     VExpansionPanel,
-    VExpansionPanelContent
+    VExpansionPanelContent,
   },
 }
 </script>

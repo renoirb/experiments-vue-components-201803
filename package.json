@@ -2,12 +2,19 @@
   "name": "@renoirb/experiments-vue-components-201803",
   "version": "0.1.0",
   "main": "lib/UneLibrairie.umd.min.js",
+  "author": "Renoir Boulanger <hello@renoirboulanger.com>",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/renoirb/experiments-vue-components-201803.git",
+    "type": "git"
+  },
   "scripts": {
     "dev": "vue-cli-service serve --open --hot",
     "lib": "vue-cli-service build --dest lib --target lib --name UneLibrairie src/lib.js",
     "test": "vue-cli-service test",
     "test:watch": "vue-cli-service test --config jest.config.js -i --watch",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint:fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
     "vue": "^2.5.13"
@@ -17,6 +24,7 @@
     "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
     "@vue/cli-plugin-unit-jest": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
+    "@vue/eslint-config-standard": "^3.0.0-beta.6",
     "@vue/test-utils": "^1.0.0-beta.10",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^22.0.4",
@@ -35,12 +43,8 @@
       "@vue/app"
     ]
   },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ]
+  "standard": {
+    "useEslintrc": true
   },
   "postcss": {
     "plugins": {

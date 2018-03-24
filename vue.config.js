@@ -4,5 +4,5 @@
  * https://github.com/shama/stylus-loader/blob/master/README.md
  */
 module.exports = {
-  lintOnSave: true
+  lintOnSave: true,
 }

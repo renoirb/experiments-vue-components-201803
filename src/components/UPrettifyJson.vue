@@ -16,9 +16,7 @@
 </template>
 
 <script>
-const classNames = [
-  'u-prettify-json--component',
-]
+const classNames = ['u-prettify-json--component']
 
 // @vue/component
 export default {
@@ -34,8 +32,8 @@ export default {
       default: () => ({}),
     },
     title: {
-      type: [
-        String,
+      type:
+      [String,
         null,
       ],
       default: null,
@@ -46,8 +44,8 @@ export default {
   }),
   computed: {
     stringified () {
-        return JSON.stringify(this.object, null, 4)
-    }
+      return JSON.stringify(this.object, null, 4)
+    },
   },
 }
 </script>

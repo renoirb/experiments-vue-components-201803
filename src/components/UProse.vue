@@ -15,12 +15,15 @@ import VueMarkdown from 'vue-markdown'
 
 const ProseHtml = {
   render (h) {
-    return h('div', {
-      class: {
-        'u-prose-html': true,
+    return h(
+      'div',
+      {
+        class: {
+          'u-prose-html': true,
+        },
       },
-    },
-    this.$slots.default)
+      this.$slots.default
+    )
   },
 }
 
@@ -31,7 +34,7 @@ export default {
     markdown: {
       type: Boolean,
       default: true,
-    }
+    },
   },
   computed: {
     currentType () {
@@ -41,7 +44,7 @@ export default {
   components: {
     markdown: VueMarkdown,
     markup: ProseHtml,
-  }
+  },
 }
 </script>
 

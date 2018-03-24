@@ -8,20 +8,20 @@ module.exports = {
     'js',
     'jsx',
     'json',
-    'vue'
+    'vue',
   ],
   transform: {
     '^.+\\.vue$': 'vue-jest',
     // '^.+\\.vue$': 'jest-vue-preprocessor',
     '^.+\\.jsx?$': 'babel-jest',
-    '\\.(styl)$': 'jest-css-modules'
+    '\\.(styl)$': 'jest-css-modules',
   },
   moduleNameMapper: {
     '^@/tests$': '<rootDir>/tests/index.js',
     '^@/tests/(.*)$': '<rootDir>/tests/$1',
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   snapshotSerializers: [
-    'jest-serializer-vue'
-  ]
+    'jest-serializer-vue',
+  ],
 }

@@ -1,0 +1,59 @@
+
+/**
+ * Setting up colors by extending Vuetify's Styl.
+ *
+ * Still in progress, see https://github.com/vuetifyjs/vuetify/issues/2135
+ *
+ * RTFM:
+ * https://github.com/vuetifyjs/vuetify/blob/master/src/stylus/settings/_variables.styl
+ * https://github.com/vuetifyjs/vuetify/blob/master/src/stylus/settings/_theme.styl
+ * https://vuetifyjs.com/en/style/theme
+ * http://stylus-lang.com/docs/
+ */
+
+$color-pack = false
+
+$body-bg-light = #f1f2f7
+$body-font-family = 'Arial'
+$alert-font-size = 18px
+
+$theme := {
+  primary: #2C3E50,
+  secondary: #95a5a6,
+  accent: #f2a200,
+  error: #E74C3C,
+  warning: #F39C12,
+  info: #3498DB,
+  success: #18BC9C,
+  hotpink: #ff69b4,
+}
+
+@import '~vuetify/src/stylus/app'
+@import '~vuetify/src/stylus/theme'
+@import '~vuetify/src/stylus/components/_app'
+@import '~vuetify/src/stylus/components/_data-iterator'
+@import '~vuetify/src/stylus/components/_data-table'
+@import '~vuetify/src/stylus/components/_dividers'
+@import '~vuetify/src/stylus/components/_navigation-drawer'
+@import '~vuetify/src/stylus/components/_footer'
+@import '~vuetify/src/stylus/components/_input-groups'
+@import '~vuetify/src/stylus/components/_lists'
+@import '~vuetify/src/stylus/components/_buttons'
+@import '~vuetify/src/stylus/components/_button-toggle'
+@import '~vuetify/src/stylus/components/_cards'
+@import '~vuetify/src/stylus/components/_icons'
+@import '~vuetify/src/stylus/components/_grid'
+@import '~vuetify/src/stylus/components/_toolbar'
+@import '~vuetify/src/stylus/components/_tabs'
+
+
+/**
+ * Use Stylus?
+ *
+ * For example, have an inline SVG patten as background
+ *
+ * Thanks to http://www.heropatterns.com/
+ */
+.application.theme--light
+  background-color: #f1f2f7
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23d6d8e7' fill-opacity='0.67' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E")

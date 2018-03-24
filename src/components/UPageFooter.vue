@@ -24,9 +24,7 @@
 import UNavigationFooter from './UNavigationFooter.vue'
 import UCopyrightLinks from './UCopyrightLinks.vue'
 
-const classNames = [
-  'u-page-footer--component',
-]
+const classNames = ['u-page-footer--component']
 
 // @vue/component
 export default {
@@ -52,6 +50,6 @@ export default {
 
 <style>
 .u-copyright-links--component + .u-navigation-footer--component {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 </style>

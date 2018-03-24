@@ -15,5 +15,5 @@ export {
   UPageFooter,
   UPrettifyJson,
   UProse,
-  UToolbarCard
+  UToolbarCard,
 }

@@ -1,0 +1,15 @@
+{
+  "standard.enable": false,
+  "eslint.packageManager": "yarn",
+  "npm.packageManager": "yarn",
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact"
+  ],
+  "eslint.options": {
+    "extensions": [
+      ".js"
+    ]
+  }
+}

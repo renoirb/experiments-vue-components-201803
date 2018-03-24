@@ -1,4 +1,6 @@
-import { shallow } from '@vue/test-utils'
+import {
+  shallow,
+} from '@vue/test-utils'
 import Vue from 'vue'
 import UCopyrightLinks from '@/components/UCopyrightLinks.vue'
 
@@ -6,7 +8,9 @@ describe('UCopyrightLinks.vue', () => {
   it('renders props.productName when passed', () => {
     const productName = 'sg59PgYRUqI79HW'
     const wrapper = shallow(UCopyrightLinks, {
-      propsData: { productName }
+      propsData: {
+        productName,
+      },
     })
     expect(wrapper.text()).toMatch(productName)
     expect(wrapper.element).toMatchSnapshot()
@@ -16,8 +20,8 @@ describe('UCopyrightLinks.vue', () => {
     let Component = Vue.extend(UCopyrightLinks) // Create a copy of the original component
     const vm = new Component({
       propsData: { // Replace data value with this fake data
-        productName: 'SomethingElse'
-      }
+        productName: 'SomethingElse',
+      },
     }).$mount() // Instances and mounts the component
     expect(vm.$el).toMatchSnapshot()
   })

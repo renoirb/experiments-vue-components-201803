@@ -1,4 +1,3 @@
-
 /**
  * Attempting exporting subset of Vuetify.js
  *
@@ -22,6 +21,9 @@ import VGrid from 'vuetify/es5/components/VGrid'
 import VTabs from 'vuetify/es5/components/VTabs'
 import VToolbar from 'vuetify/es5/components/VToolbar'
 import transitions from 'vuetify/es5/components/transitions'
+
+import './stylus/main.styl'
+
 import VueMarkdown from 'vue-markdown'
 
 import {
@@ -32,11 +34,8 @@ import {
   UPageFooter,
   UPrettifyJson,
   UProse,
-  UToolbarCard
+  UToolbarCard,
 } from '@/components'
-
-// import '@/stylus/theme.stylus'
-import '../node_modules/vuetify/src/stylus/app.styl'
 
 const components = {
   UCopyrightLinks,
@@ -46,7 +45,7 @@ const components = {
   UPageFooter,
   UPrettifyJson,
   UProse,
-  UToolbarCard
+  UToolbarCard,
 }
 
 const imported = {
@@ -64,18 +63,20 @@ const imported = {
   VGrid,
   VToolbar,
   VTabs,
-  transitions
+  transitions,
 }
 
 const theme = {
-  'primary': '#2C3E50',
-  'secondary': '#95a5a6',
-  'accent': '#f2a200',
-  'error': '#E74C3C',
-  'warning': '#F39C12',
-  'info': '#3498DB',
-  'success': '#18BC9C',
-  'hotpink': '#ff69b4'
+  // e.g. primary--text
+  primary: '#2C3E50',
+  secondary: '#95a5a6',
+  accent: '#f2a200',
+  error: '#E74C3C',
+  warning: '#F39C12',
+  info: '#3498DB',
+  success: '#18BC9C',
+  hotpink: '#ff69b4',
+  'text-color': '#ff69b4',
 }
 
 const VuePlugin = {
@@ -83,18 +84,18 @@ const VuePlugin = {
     for (const [
       // eslint-disable-next-line
       className,
-      component
+      component,
     ] of Object.entries(components)) {
       Vue.component(component.name, component)
     }
     Vue.use(Vuetify, {
       components: {
-        ...imported
+        ...imported,
       },
-      theme
+      theme,
     })
     Vue.use(VueMarkdown)
-  }
+  },
 }
 
 export default VuePlugin
@@ -122,5 +123,5 @@ export {
   UPageFooter,
   UPrettifyJson,
   UProse,
-  UToolbarCard
+  UToolbarCard,
 }

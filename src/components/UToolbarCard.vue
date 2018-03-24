@@ -33,9 +33,7 @@
 import VToolbar from 'vuetify/es5/components/VToolbar'
 import VCard from 'vuetify/es5/components/VCard'
 
-const classNames = [
-  'u-toolbar-card--component'
-]
+const classNames = ['u-toolbar-card--component']
 
 // @vue/component
 export default {
@@ -43,12 +41,12 @@ export default {
   props: {
     icon: {
       type: String,
-      default: 'menu'
+      default: 'menu',
     },
     title: {
       type: String,
-      default: 'Card Title'
-    }
+      default: 'Card Title',
+    },
   },
   data: () => ({
     classNames,
@@ -56,6 +54,6 @@ export default {
   components: {
     VToolbar,
     VCard,
-  }
+  },
 }
 </script>

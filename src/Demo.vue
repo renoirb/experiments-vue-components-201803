@@ -16,7 +16,6 @@
 
 This is `markdown` **passed in** as _string_ inside a `&lt;slot /&gt;`.
 
-
             </u-prose>
             <u-prose
               :markdown="false"
@@ -33,8 +32,8 @@ This is `markdown` **passed in** as _string_ inside a `&lt;slot /&gt;`.
               </v-btn>
             </div>
           </u-toolbar-card>
-          <u-page-footer 
-            :navigation-footer="footer" 
+          <u-page-footer
+            :navigation-footer="footer"
           />
         </v-container>
       </v-content>
@@ -52,7 +51,7 @@ import {
   UExpansionPanelList,
   UNavigationFooter,
   UProse,
-  UToolbarCard
+  UToolbarCard,
 } from './components'
 
 /** *********************** lib/demo.html script tag copy-pasta BEGIN *********************** */
@@ -67,18 +66,18 @@ const data = {
       label: 'Deuxième panneau',
       key: 'deuxieme-panneau',
       contents: '<p>Contenu du second panneau</p>',
-    }
+    },
   ],
   footer: [
     {
       label: 'HTTP Cat',
-      href: 'https://http.cat/'
+      href: 'https://http.cat/',
     },
     {
       label: 'Fork-me on GitHub',
-      href: 'https://github.com/renoirb/experiments-vue-components-201803'
-    }
-  ]
+      href: 'https://github.com/renoirb/experiments-vue-components-201803',
+    },
+  ],
 }
 /** *********************** lib/demo.html script tag copy-pasta END *********************** */
 
@@ -92,7 +91,7 @@ export default {
     UExpansionPanelList,
     UNavigationFooter,
     UProse,
-    UToolbarCard
-  }
+    UToolbarCard,
+  },
 }
 </script>

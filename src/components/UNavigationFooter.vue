@@ -24,11 +24,10 @@
 </template>
 
 <script>
-
 const classNames = [
   'u-navigation-footer--component',
   'text-xs-center',
-  'pa-1'
+  'pa-1',
 ]
 
 // @vue/component

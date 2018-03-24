@@ -65,7 +65,7 @@
 
 const experiments = [
   {
-    title: 'GraphQL + VueX and U360 Requests',
+    title: 'GraphQL + VueX',
     items: [
       {
         title: 'Code',

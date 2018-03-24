@@ -15,9 +15,9 @@ Vue.use(VuePlugin)
 
 new Vue({
   components: {
-    Demo
+    Demo,
   },
-  render: h => h(Demo)
+  render: h => h(Demo),
 }).$mount('#app')
 
 /**
