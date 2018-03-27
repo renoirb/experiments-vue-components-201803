@@ -16,7 +16,7 @@ describe('UCopyrightLinks.vue', () => {
     expect(wrapper.element).toMatchSnapshot()
   })
   it('Should have the following default markup', () => {
-    // Thanks https://alexjoverm.github.io/2017/08/21/Write-the-first-Vue-js-Component-Unit-Test-in-Jest/
+    // Thanks  https://alexjoverm.github.io/2017/08/21/Write-the-first-Vue-js-Component-Unit-Test-in-Jest/
     let Component = Vue.extend(UCopyrightLinks) // Create a copy of the original component
     const vm = new Component({
       propsData: { // Replace data value with this fake data
