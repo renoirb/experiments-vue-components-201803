@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`u-prose.vue Parses markdown 1`] = `
+exports[`u-prose Parses markdown 1`] = `
 <div
   class="u-prose--component"
 >

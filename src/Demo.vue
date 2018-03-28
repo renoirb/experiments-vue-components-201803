@@ -10,20 +10,11 @@
               :opened-index="1"
               :panels="panels"
             />
-            <u-prose>
-
-### u-prose component
-
-This is `markdown` **passed in** as _string_ inside a `&lt;slot /&gt;`.
-
-            </u-prose>
             <u-prose
               :markdown="false"
             >
-
 <h3>u-prose component<small>[markdown=false]</small></h3>
 <p>And this is HTML.</p>
-
             </u-prose>
             <div slot="actions">
               <v-btn>
@@ -81,6 +72,7 @@ const data = {
 }
 /** *********************** lib/demo.html script tag copy-pasta END *********************** */
 
+// @vue/component
 export default {
   name: 'demo',
   data: () => ({

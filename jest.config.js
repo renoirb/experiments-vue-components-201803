@@ -14,12 +14,12 @@ module.exports = {
     '^.+\\.vue$': 'vue-jest',
     // '^.+\\.vue$': 'jest-vue-preprocessor',
     '^.+\\.jsx?$': 'babel-jest',
-    '\\.(styl)$': 'jest-css-modules',
   },
   moduleNameMapper: {
     '^@/tests$': '<rootDir>/tests/index.js',
     '^@/tests/(.*)$': '<rootDir>/tests/$1',
     '^@/(.*)$': '<rootDir>/src/$1',
+    '.styl(|us)$': '<rootDir>/tests/__mocks__/styleMock.js',
   },
   snapshotSerializers: [
     'jest-serializer-vue',

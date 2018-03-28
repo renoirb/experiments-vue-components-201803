@@ -1,10 +1,11 @@
 import {
   shallow,
 } from '@vue/test-utils'
+
 import Vue from 'vue'
 import UCopyrightLinks from '@/components/UCopyrightLinks.vue'
 
-describe('UCopyrightLinks.vue', () => {
+describe(`${UCopyrightLinks.name}`, () => {
   it('renders props.productName when passed', () => {
     const productName = 'sg59PgYRUqI79HW'
     const wrapper = shallow(UCopyrightLinks, {

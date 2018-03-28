@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`u-layout-row-card Parses markdown 1`] = `
+<div
+  class="layout row wrap"
+>
+  <div
+    class="flex"
+  >
+    <div
+      class="card"
+      style="height: auto;"
+    >
+      <v-card-title
+        primary-title=""
+      >
+        <h2>
+          How much wood would a woodchuck chuck if a woodchuck could chuck wood?
+        </h2>
+         
+        <div
+          class="spacer"
+        />
+         
+      </v-card-title>
+       
+      <section
+        class="card__main"
+      />
+    </div>
+  </div>
+</div>
+`;

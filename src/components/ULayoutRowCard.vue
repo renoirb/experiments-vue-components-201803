@@ -24,6 +24,13 @@
 </template>
 
 <script>
+import {
+  VLayout,
+  VFlex,
+  VSpacer,
+} from 'vuetify/es5/components/VGrid'
+import VCard from 'vuetify/es5/components/VCard'
+
 // @vue/component
 export default {
   name: 'u-layout-row-card',
@@ -40,6 +47,12 @@ export default {
     showTitle () {
       return typeof this.title === 'string'
     },
+  },
+  components: {
+    VLayout,
+    VFlex,
+    VSpacer,
+    VCard,
   },
 }
 </script>

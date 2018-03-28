@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UCopyrightLinks.vue Should have the following default markup 1`] = `
+exports[`u-copyright-links Should have the following default markup 1`] = `
 <div
   class="u-copyright-links--component text-xs-center pa-1 accent--text"
 >
@@ -28,7 +28,7 @@ exports[`UCopyrightLinks.vue Should have the following default markup 1`] = `
 </div>
 `;
 
-exports[`UCopyrightLinks.vue renders props.productName when passed 1`] = `
+exports[`u-copyright-links renders props.productName when passed 1`] = `
 <div
   class="u-copyright-links--component text-xs-center pa-1 accent--text"
 >

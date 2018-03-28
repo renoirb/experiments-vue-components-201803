@@ -1,13 +1,13 @@
 import {
   mount,
 } from '@vue/test-utils'
-import Vue from 'vue'
-import Component from '@/components/UProse.vue'
 
-describe(`${Component.name}.vue`, () => {
+import UProse from '@/components/UProse.vue'
+
+describe(`${UProse.name}`, () => {
   it('Parses markdown', () => {
     const defaultSlotContent = `# Hello **World**\n`
-    const wrapper = mount(Component, {
+    const wrapper = mount(UProse, {
       slots: {
         default: defaultSlotContent,
       },
