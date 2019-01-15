@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>UneLibrairie demo</title>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.rawgit.com/renoirb/experiments-vue-components-201803/master/lib/UneLibrairie.umd.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/renoirb/experiments-vue-components-201803/master/lib/UneLibrairie.css"
+    />
+    <!-- Refer to https://github.com/renoirb/experiments-vue-components-201803 -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/x-template" id="template">
+            <v-app>
+              <v-content>
+                <v-container>
+                  <u-toolbar-card
+                    title="UneLibrarie Demo"
+                  >
+                    <u-expansion-panel-list
+                      :opened-index="1"
+                      :panels="panels"
+                    />
+                    <u-prose>
+
+### u-prose component
+
+This is `markdown` **passed in** as _string_ inside a `&lt;slot /&gt;`.
+
+                    </u-prose>
+                    <u-prose
+                      :markdown="false"
+                    >
+
+<h3>u-prose component<small>[markdown=false]</small></h3>
+<p>And this is HTML.</p>
+
+                    </u-prose>
+
+                    <p>See also <a href="index.html">Using only Vue.js runtime with Render functions</a></p>
+
+                    <div slot="actions">
+                      <v-btn>
+                        <v-icon>assignment_turned_in</v-icon>
+                        Soumettre
+                      </v-btn>
+                    </div>
+                  </u-toolbar-card>
+                  <u-page-footer
+                    :navigation-footer="footer"
+                  />
+                </v-container>
+              </v-content>
+            </v-app>
+    </script>
+    <script>
+      Vue.config.productionTip = false
+      Vue.use(UneLibrairie)
+      const data = {
+        panels: [
+          {
+            label: 'Hello',
+            key: 'hello-world',
+            contents: '<p>World!</p>',
+          },
+          {
+            label: 'Deuxième panneau',
+            key: 'deuxieme-panneau',
+            contents: '<p>Contenu du second panneau</p>',
+          },
+        ],
+        footer: [
+          {
+            label: 'HTTP Cat',
+            href: 'https://http.cat/',
+          },
+          {
+            label: 'Fork-me on GitHub',
+            href:
+              'https://github.com/renoirb/experiments-vue-components-201803',
+          },
+        ],
+      }
+
+      window.vm = new Vue({
+        template: '#template',
+        data: () => ({
+          ...data,
+        }),
+      }).$mount('#app')
+    </script>
+  </body>
+</html>

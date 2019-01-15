@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js runtime example</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="https://cdn.jsdelivr.net/gh/renoirb/experiments-vue-components-201803@master/lib/UneLibrairie.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/systemjs/systemjs@0.21.5/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/renoirb/experiments-vue-components-201803@master/lib/UneLibrairie.umd.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+  <style>
+    dt+dd {
+      margin-bottom: 10px;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-left: 10px;
+    }
+
+    input[type=text] {
+      border: 1px solid purple;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <v-app :dark="dark">
+      <v-content>
+        <v-container>
+          <u-toolbar-card :title="title" :icon="null">
+            <top-level :view-model="$data.requests" :future-technical-debt="$data.variantBool">
+              This is default slot contents or top-level component
+            </top-level>
+            <hr />
+            <div>
+              <p>See also <a href="using-template-compiler.html">Using Vue.js full Template Compiler build</a></p>
+            </div>
+            <div slot="actions">
+              <v-form>
+                <div>
+                  <label for="userFirstName">First Name:</label>
+                  <input name="userFirstName" v-model="user.firstName" label="First name" type="text" />
+                </div>
+                <div>
+                  <label for="userLastName">Last Name:</label>
+                  <input name="userLastName" v-model="user.lastName" label="Last name" type="text" />
+                </div>
+                <div>
+                  <label for="toggleDark">Make UI Dark:</label>
+                  <input name="toggleDark" type="checkbox" v-model="dark" />
+                </div>
+                <div>
+                  <label for="toggleVariant">Tobble List Variant:</label>
+                  <input name="toggleVariant" type="checkbox" v-model="variantBool" />
+                </div>
+              </v-form>
+            </div>
+          </u-toolbar-card>
+
+          <u-copyright-links />
+
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script>
+    window.process = { env: { NODE_ENV: 'production' } }
+  </script>
+  <script src="./loader.js"></script>
+
+</body>
+
+</html>
