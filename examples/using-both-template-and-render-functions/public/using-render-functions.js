@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import { createVueInstance, keyify } from './common.js'
 
 class ViewModel {
   constructor(rows) {
@@ -26,30 +26,28 @@ class ViewModel {
   */
 }
 
-const rootComponentsList = []
-
-rootComponentsList.push({
-  name: 'top-level',
+const ViewModelComponent = {
+  name: 'view-model-component',
   functional: true,
   props: {
-    viewModel: {
-      type: [ViewModel, Object],
-      default: () => new ViewModel(),
+    rows: {
+      type: Array,
+      default: () => [],
+    },
+    selectedRow: {
+      type: Number,
+      default: 0,
     },
     futureTechnicalDebt: {
       type: Boolean,
       default: true,
     },
   },
-  components: {
-    DefinitionList,
-  },
   // https://vuejs.org/v2/guide/render-function.html#Functional-Components
-  render: function(createElement, { children, data, props }) {
-    const currentRowIndex = 0
-
-    const m = props.viewModel
-    const row = m.rows[currentRowIndex]
+  render(createElement, { children, data, props }) {
+    const selectedRow = props.selectedRow || 0
+    const rows = props.rows
+    const current = rows[selectedRow]
 
     // Since btoa will change at any time the row changes, that should work
     // Change it. But that's not a proper way to do this anyway.
@@ -59,13 +57,12 @@ rootComponentsList.push({
     // ```
 
     const variant = props.futureTechnicalDebt ? 'v-list' : 'dl'
-    const key = btoa(JSON.stringify({ variant, ...row }))
-    console.log('top-level render', variant, key)
+    const key = keyify({ variant, ...current })
 
     children.push(
       createElement(DefinitionList, {
         attrs: {
-          row,
+          row: current,
           variant,
         },
         props,
@@ -75,9 +72,7 @@ rootComponentsList.push({
 
     return createElement('section', data, children)
   },
-})
-
-const keyify = w => btoa(String(w))
+}
 
 const DefinitionList = {
   name: 'definition-list',
@@ -86,7 +81,6 @@ const DefinitionList = {
 
     const children = []
 
-    console.log('definition-list render', variant)
     const variantVNodeData = {
       key: variant,
     }
@@ -163,31 +157,30 @@ export const createFixture = (prop = null) => {
    * - https://github.com/node-modules/serialize-json
    * - https://dev.to/stereobooster/json-json-json-4ed7
    */
-  const id = 'f6dde602-9e36-42a6-9688-f50ea9e8c07b'
+  const SomeUnpretictableIdKeyNameID = 'f6dde602-9e36-42a6-9688-f50ea9e8c07b'
   const progress = 98
   const subject_id = '0114794b-2dcd-4e79-9875-ba06a0220331'
   const subject_type = 'SomeForeignRelationObjectType'
-  const name = 'canary'
+  const MyCoolUserName = 'canary'
   const CreationDate = 1515174120
-  const Status = 'InProgress'
-  const UserUniqueName = 'owner@example.org'
-  const RequestType = 'CompleteServiceProvisioning'
-  const Class = 'ServiceProvisioningClass'
+  const status = 3
 
   const data = {
-    id,
+    SomeUnpretictableIdKeyNameID,
     progress,
     subject_id,
     subject_type,
-    name,
+    MyCoolUserName,
     CreationDate,
-    Status,
-    UserUniqueName,
-    RequestType,
-    Class,
+    status,
   }
 
-  const paths = ['subject_id', 'name', 'CreationDate']
+  // For key mapping. Not included here just yet.
+  const paths = [
+    'SomeUnpretictableIdKeyNameID',
+    'MyCoolUserName',
+    'CreationDate',
+  ]
   const fields = ['id', 'name', 'created_at']
 
   const fixture = {
@@ -207,11 +200,44 @@ export const createFixture = (prop = null) => {
   return prop === null ? fixture : Reflect.get(fixture, prop)
 }
 
-function bootstrap() {
+export default (async function() {
   const { paths, fields, ...fixture } = createFixture()
 
-  const requests = {
-    rows: [fixture.data],
+  const rows = []
+  rows.push(fixture.data)
+
+  const computed = {
+    title() {
+      const firstName = this.$data.user.firstName
+      const lastName = this.$data.user.lastName
+
+      const names = [firstName, lastName]
+      const title = `Hello, ${names.join(' ')}. Here is a Dynamic title.`
+
+      return title
+    },
+  }
+
+  // https://vuejs.org/v2/guide/events.html#Method-Event-Handlers
+  const methods = {
+    onInputChange(event) {
+      const target = event.target
+      const value = target.value
+      console.log('onInputChange', value)
+    },
+  }
+
+  const modules = {
+    requests: {
+      namespaced: true,
+      state: {
+        rows,
+      },
+    },
+  }
+
+  const components = {
+    'top-level': ViewModelComponent,
   }
 
   // Since its the root vue instance, we can use data as a property here.
@@ -220,58 +246,32 @@ function bootstrap() {
     variantBool: true,
     user: {
       firstName: 'John',
-      middleName: 'A',
       lastName: 'Doe',
     },
-    requests,
   }
 
-  // https://vuejs.org/v2/api/#productionTip
-  Vue.config.productionTip = false
-
-  rootComponentsList.forEach(c => Vue.component(c.name, c))
-  Vue.use(UneLibrairie)
-
-  /**
-   * Notice that UneLibrairie packages Vuetify v 1.0
-   *
-   * See:
-   * - https://github.com/vuetifyjs/vuetify/tree/v1.0.19
-   * - https://cdn.jsdelivr.net/npm/vuetify@1.0.19/dist/vuetify.min.js
-   * - https://cdn.jsdelivr.net/npm/vuetify@1.0.19/dist/vuetify.css
-   *
-   * See UneLibrairie manifest: https://github.com/renoirb/experiments-vue-components-201803/blob/master/src/lib.js#L8
-   */
-
-  // The Root Vue Instance
-  const rootInstance = new Vue({
-    el: '#app',
+  const rootInstance = await createVueInstance({
+    computed,
+    methods,
+    modules,
+    components,
     data,
-    computed: {
-      title() {
-        const firstName = this.user.firstName || ''
-        const lastName = this.user.lastName || ''
+  })
 
-        const fullName = [firstName, lastName]
-
-        return `Hello ${fullName.join(' ')} !`
-      },
-      // currentViewModel() {
-      //   // See comment in createFixture
-      //   const list = this.$data['requests'].rows
-      //   return new ViewModel(list)
-      // }
-    },
+  rootInstance.$mount('#root')
+  rootInstance.$nextTick(() => {
+    const rootElement = document.getElementById('app') || null
+    if (rootElement !== null) {
+      rootElement.removeAttribute('hidden')
+    }
   })
 
   const w = window || null
   if (typeof w !== null) {
-    w.globalVue = rootInstance
+    w.vueRootInstance = rootInstance
     console.info(
-      'Check what is available in window.globalVue',
-      Object.keys(w.globalVue)
+      'Check what is available in window.vueRootInstance',
+      Object.keys(w.vueRootInstance)
     )
   }
-}
-
-export default bootstrap()
+})()

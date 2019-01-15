@@ -13,11 +13,15 @@ SystemJS.config({
       'https://cdn.jsdelivr.net/npm/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js',
     // https://github.com/vuejs/vue/issues/3948#issuecomment-253971484
     vue: 'https://cdn.jsdelivr.net/gh/vuejs/vue@2.5.22/dist/vue.common.js',
+    vuex: 'https://cdn.jsdelivr.net/gh/vuejs/vuex@v3.0.1/dist/vuex.esm.js',
+    'vuex-logger':
+      'https://cdn.jsdelivr.net/gh/vuejs/vuex@v3.0.1/dist/logger.js',
     'core-js-shim': 'https://unpkg.com/core-js/client/shim.min.js',
     'data-model': 'packages/data-model/dist/index.js',
     '@babel/runtime': 'node_modules/@babel/runtime',
+    UneLibrairie:
+      'https://gitcdn.xyz/repo/renoirb/experiments-vue-components-201803/v1.0.0-alpha.0/lib/UneLibrairie.umd.min.js',
   },
 })
 SystemJS.import('plugin-babel')
 SystemJS.import('systemjs-babel-build')
-SystemJS.import('./example.js')

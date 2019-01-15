@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js runtime example</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <script src="https://cdn.jsdelivr.net/gh/systemjs/systemjs@0.21.5/dist/system.min.js"></script>
+  <script src="systemjs.config.js"></script>
+  <link href="https://gitcdn.xyz/repo/renoirb/experiments-vue-components-201803/v1.0.0-alpha.0/lib/UneLibrairie.css"
+    rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+  <style>
+    dt+dd {
+      margin-bottom: 10px;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-left: 10px;
+    }
+
+    input[type=text] {
+      border: 1px solid purple;
+    }
+  </style>
+</head>
+
+<body style="background-color:#f1f2f7; margin-bottom: 40px;">
+
+  <div id="root">
+
+    <v-app :dark="dark" hidden>
+      <v-content>
+        <v-container>
+          <u-toolbar-card :title="title" :icon="null">
+            <top-level :rows="$store.state.requests.rows" :future-technical-debt="$data.variantBool">
+              This is default slot contents or top-level component
+            </top-level>
+            <hr />
+            <div>
+              <p>See also <a href="index.html">Other available examples</a></p>
+            </div>
+            <div slot="actions">
+              <v-form>
+                <div>
+                  <label for="userFirstName">First Name:</label>
+                  <input name="userFirstName" v-model="user.firstName" label="First name" type="text" @input="onInputChange" />
+                </div>
+                <div>
+                  <label for="userLastName">Last Name:</label>
+                  <input name="userLastName" v-model="user.lastName" label="Last name" type="text" @input="onInputChange" />
+                </div>
+                <div>
+                  <label for="toggleDark">Make UI Dark:</label>
+                  <input name="toggleDark" type="checkbox" v-model="dark" />
+                </div>
+                <div>
+                  <label for="toggleVariant">Tobble List Variant:</label>
+                  <input name="toggleVariant" type="checkbox" v-model="variantBool" />
+                </div>
+              </v-form>
+            </div>
+          </u-toolbar-card>
+
+          <u-page-footer :navigation-footer="$store.state.example.links">
+            <u-copyright-links v-bind="$store.state.example" />
+          </u-page-footer>
+
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script>
+    window.process = { env: { NODE_ENV: 'production' } }
+  </script>
+  <script>
+    SystemJS.import('./using-render-functions.js')
+  </script>
+
+</body>
+
+</html>

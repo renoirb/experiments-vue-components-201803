@@ -1,0 +1,14 @@
+{
+  "data": {
+    "examples": [
+      {
+        "title": "Using Render Functions and only Vue.js' runtime.",
+        "href": "using-render-functions.html"
+      },
+      {
+        "title": "Using Vue.js' full Template Compiler and inline templates.",
+        "href": "using-template-compiler.html"
+      }
+    ]
+  }
+}
